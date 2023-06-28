@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package hero.v1alpha;
+
+message Recette {
+  string name = 1;
+  int32 id = 2;
+  int32 recette = 3;
+  string ingredients = 4;
+}
+
+service HeroCRUDService {
+  rpc Get (GetRequest) returns (GetResponse);
+  rpc Add (AddRequest) returns (AddResponse);
+  rpc Update (UpdateRequest) returns (UpdateResponse);
+  rpc Delete (DeleteRequest) returns (DeleteResponse);
+}
+
+message GetRequest {
+  string name = 1;
+  int32 id = 2;
+}
+
+message GetResponse {
+  Recette recette = 1;
+}
+
+message AddRequest {
+  Recette recette = 1;
+}
+
+message AddResponse {
+  Recette recette = 1;
+}
+
+message UpdateRequest {
+  Recette recette = 1;
+}
+
+message UpdateResponse {
+  Recette recette = 1;
+}
+
+message DeleteRequest {
+  string name = 1;
+  int32 id = 2;
+}
+
+message DeleteResponse {
+  Recette recette = 1;
+}

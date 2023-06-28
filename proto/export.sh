@@ -4,4 +4,4 @@ buf generate
 buf export . --output ../task-api/src/proto
 buf export . --output ../user-api/src/proto
 buf export . --output ../auth-api/src/proto
-buf export . --output ../nestjs-grpc-tutorial/src/proto
+buf export . --output ../recette-api/src/proto
