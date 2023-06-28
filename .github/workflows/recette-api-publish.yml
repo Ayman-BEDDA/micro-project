@@ -1,4 +1,4 @@
-name: User API Docker image publish
+name: Recette API Docker image publish
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
     paths:
       - "recette-api/**"
-      - ".github/workflows/user-api-publish.yml"
+      - ".github/workflows/recette-api-publish.yml"
 
   # Run tests for any PRs.
   pull_request:
