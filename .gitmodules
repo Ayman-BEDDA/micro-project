@@ -1,0 +1,3 @@
+[submodule "recette-api"]
+	path = recette-api
+	url = git@github.com:Ayman-BEDDA/micro-project.git
