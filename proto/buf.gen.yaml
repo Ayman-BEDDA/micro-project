@@ -29,7 +29,7 @@ plugins:
       - nestJs=true
       - useOptionals=all
   - plugin: buf.build/community/stephenh-ts-proto
-    out: ../nestjs-grpc-tutorial/src/stubs
+    out: ../nutrition-api/src/stubs
     opt:
       - addGrpcMetadata=true
       - nestJs=true
