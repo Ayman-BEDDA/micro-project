@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package recette.v1alpha;
+
+message Recette {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  string note = 4;
+}
+
+service RecetteCRUDService {
+  rpc Get (GetRequest) returns (GetResponse);
+  rpc Add (AddRequest) returns (AddResponse);
+  rpc Update (UpdateRequest) returns (UpdateResponse);
+  rpc Delete (DeleteRequest) returns (DeleteResponse);
+}
+
+message GetRequest {
+  int32 id = 1;  
+  string name = 2;
+  string description = 3;
+  string note = 4;
+}
+
+message GetResponse {
+  repeated Recette recettes = 1;
+}
+
+message AddRequest {
+  string name = 1;
+  string description = 2;
+  string note = 3;
+}
+
+message AddResponse {
+  Recette recette = 1;
+}
+
+message UpdateRequest {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    string note = 4;
+  }
+  
+  message UpdateResponse {
+    Recette recette = 1;
+  }
+  
+  message DeleteRequest {
+    int32 id = 1;
+  }
+  
+  message DeleteResponse {
+    Recette recette = 1;
+  }

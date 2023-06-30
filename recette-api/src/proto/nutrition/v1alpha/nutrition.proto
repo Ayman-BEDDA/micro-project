@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package nutrition.v1alpha;
+
+message Nutrition {
+  int32 id = 1;
+  string name = 2;
+  int32 calories = 3;
+  int32 proteines = 4;
+  int32 lipides = 5;
+  int32 glucides = 6;
+  int32 fibres = 7;
+  string vitamines = 8;
+  string mineraux = 9;
+  string allergenes = 10;
+}
+
+service NutritionCRUDService {
+  rpc Get (GetRequest) returns (GetResponse);
+  rpc Add (AddRequest) returns (AddResponse);
+  rpc Update (UpdateRequest) returns (UpdateResponse);
+  rpc Delete (DeleteRequest) returns (DeleteResponse);
+}
+
+message GetRequest {
+  int32 id = 1;  
+  string name = 2;
+}
+
+message GetResponse {
+  repeated Nutrition nutritions = 1;
+}
+
+message AddRequest {
+  string name = 1;
+  int32 calories = 2;
+  int32 proteines = 3;
+  int32 lipides = 4;
+  int32 glucides = 5;
+  int32 fibres = 6;
+  string vitamines = 7;
+  string mineraux = 8;
+  string allergenes = 9;
+}
+
+message AddResponse {
+  Nutrition nutrition = 1;
+}
+
+message UpdateRequest {
+    int32 id = 1;
+    string name = 2;
+    int32 calories = 3;
+    int32 proteines = 4;
+    int32 lipides = 5;
+    int32 glucides = 6;
+    int32 fibres = 7;
+    string vitamines = 8;
+    string mineraux = 9;
+    string allergenes = 10;
+  }
+  
+  message UpdateResponse {
+    Nutrition nutrition = 1;
+  }
+  
+  message DeleteRequest {
+    int32 id = 1;
+  }
+  
+  message DeleteResponse {
+    Nutrition nutrition = 1;
+  }

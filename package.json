@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@bufbuild/buf": "^1.23.0",
+    "@bufbuild/buf": "^1.23.1",
     "@grpc/grpc-js": "^1.8.14"
   }
 }
