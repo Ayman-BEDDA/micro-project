@@ -2,6 +2,7 @@
 import { Metadata } from "@grpc/grpc-js";
 import { GrpcMethod, GrpcStreamMethod } from "@nestjs/microservices";
 import { Observable } from "rxjs";
+import {Nutrition} from "../../nutrition/v1alpha/nutrition";
 
 export const protobufPackage = "recette.v1alpha";
 
@@ -27,10 +28,19 @@ export interface AddRequest {
   name?: string;
   description?: string;
   note?: string;
+  calories?: number;
+  proteines?: number;
+  lipides?: number;
+  glucides?: number;
+  fibres?: number;
+  vitamines?: string;
+  mineraux?: string;
+  allergenes?: string;
 }
 
 export interface AddResponse {
   recette?: Recette;
+  nutrition?: Nutrition;
 }
 
 export interface UpdateRequest {

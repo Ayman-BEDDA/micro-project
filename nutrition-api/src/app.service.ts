@@ -4,7 +4,7 @@ import { PrismaService } from './prisma.service';
 import { Prisma } from '@prisma/client';
 
 @Injectable()
-export class AppService {
+export class AppServiceNutrition {
   constructor(private prisma: PrismaService) {}
 
   create(data: Prisma.NutritionCreateInput): Promise<Nutrition> {
@@ -30,7 +30,10 @@ export class AppService {
       where: { name },
     });
   }
-  async update(id: number, data: Prisma.NutritionUpdateInput): Promise<Nutrition> {
+  async update(
+    id: number,
+    data: Prisma.NutritionUpdateInput,
+  ): Promise<Nutrition> {
     return this.prisma.nutrition.update({
       where: { id },
       data,

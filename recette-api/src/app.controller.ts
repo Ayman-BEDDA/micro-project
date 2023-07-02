@@ -16,10 +16,14 @@ import {
 } from './stubs/recette/v1alpha/recette';
 import { GrpcMethod } from '@nestjs/microservices';
 import { Metadata } from '@grpc/grpc-js';
+import { AppServiceNutrition } from '../../nutrition-api/src/app.service';
 @Controller()
 @RecetteCRUDServiceControllerMethods()
 export class AppController implements RecetteCRUDServiceController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    private readonly appService: AppService,
+    private readonly nutritionAppService: AppServiceNutrition, // Injectez le service AppService du micro-service de nutrition
+  ) {}
   async get(request: GetRequest, metadata?: Metadata): Promise<GetResponse> {
     let recette: Recette;
     let recettes: Recette[] = [];
@@ -61,6 +65,18 @@ export class AppController implements RecetteCRUDServiceController {
       description: request.description,
       note: request.note,
     });
-    return { recette: createdRecette };
+
+    const createdNutrition = await this.nutritionAppService.create({
+      name: request.name,
+      calories: request.calories,
+      proteines: request.proteines,
+      lipides: request.lipides,
+      glucides: request.glucides,
+      fibres: request.fibres,
+      vitamines: request.vitamines,
+      mineraux: request.mineraux,
+      allergenes: request.allergenes,
+    });
+    return { recette: createdRecette, nutrition: createdNutrition };
   }
 }

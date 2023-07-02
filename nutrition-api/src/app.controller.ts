@@ -1,5 +1,5 @@
 import { Controller } from '@nestjs/common';
-import { AppService } from './app.service';
+import { AppServiceNutrition } from './app.service';
 import {
   AddRequest,
   AddResponse,
@@ -19,7 +19,7 @@ import { Metadata } from '@grpc/grpc-js';
 @Controller()
 @NutritionCRUDServiceControllerMethods()
 export class AppController implements NutritionCRUDServiceController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppServiceNutrition) {}
   async get(request: GetRequest, metadata?: Metadata): Promise<GetResponse> {
     let nutrition: Nutrition;
     let nutritions: Nutrition[] = [];
