@@ -92,3 +92,8 @@ npx prisma migrate dev
 ```bash
 npm start
 ```
+
+| **API**         | **Url**                 |
+|------------------|------------------------|
+| nutrition        | localhost:8000         |
+| recette          | localhost:7000         |
