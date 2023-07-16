@@ -27,7 +27,6 @@
     "@nestjs/microservices": "^10.0.4",
     "@nestjs/platform-express": "^10.0.0",
     "@prisma/client": "^4.13.0",
-    "grpc": "^1.24.11",
     "nestjs-grpc-reflection": "^0.0.21",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
