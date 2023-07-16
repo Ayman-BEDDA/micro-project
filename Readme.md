@@ -1,5 +1,11 @@
 # Projet Micro-services
 
+### Api user auth et user
+
+On a crée une api user qui permet de créer un user et de le connecter. On a aussi crée une api auth qui permet de vérifier si le token est valide ou pas.
+
+Le port pour créer le user est 4002(Register) et le port pour se connecter est 4003(Login).
+
 ### Nos deux api "domain"
 
 On a crée deux api, une de recette et une de nutrition avec leur crud.
@@ -95,5 +101,7 @@ npm start
 
 | **API**         | **Url**                 |
 |------------------|------------------------|
+| user             | localhost:4002         |
+| auth             | localhost:4003         |
 | nutrition        | localhost:8000         |
 | recette          | localhost:7000         |

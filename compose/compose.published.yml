@@ -73,14 +73,14 @@ services:
       - secure=true
       - FRONT_CERT=/certs/front.pem
       - FRONT_KEY=/certs/front-key.pem
-      - PORT=3000
+      - PORT=3005
       - USER_API_URL=user-api:4000
       - AUTH_API_URL=auth-api:4000
       - TASK_API_URL=task-api:4000
       - ROOT_CA=/certs/rootCA.pem
       - JAEGER_URL=http://tracing:4318/v1/traces
     ports:
-      - 3000:3000
+      - 3005:3005
     volumes:
       - ../local/certs:/certs
 
