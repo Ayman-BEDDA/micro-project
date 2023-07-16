@@ -1,4 +1,4 @@
-# Proket Micro-services
+# Projet Micro-services
 
 ### Nos deux api "domain"
 
@@ -7,6 +7,13 @@ On a crée deux api, une de recette et une de nutrition avec leur crud.
 ### Notre workflow nécessitant un appel inter-api
 
 Quand vous voudrez créer une recette avec Postman ou autre, il faudra d'abord créer une nutrition car dans la méthode "add" du controller "recette", il y a une condition qui check si l'id de nutrition que vous avez mis existe ou pas. Et si elle n'existe pas, ça ne créera pas la recette. 
+
+#### Install depedencies
+
+A la racine du projet :
+```bash
+npm i
+```
 
 ### Run the prisma migration
 #### User-api
