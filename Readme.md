@@ -1,18 +1,12 @@
-# gRPC Task Manager
+# Proket Micro-services
 
-## Installation
+### Nos deux api "domain"
 
-### Create the docker network
+On a crée deux api, une de recette et une de nutrition avec leur crud.
 
-```bash
-docker network create grpc-task-manager_default
-```
+### Notre workflow nécessitant un appel inter-api
 
-### Launch the databases and tracing tools
-
-```bash
-docker compose up -d mariadb mongo tracing
-```
+Quand vous voudrez créer une recette avec Postman ou autre, il faudra d'abord créer une nutrition car dans la méthode "add" du controller "recette", il y a une condition qui check si l'id de nutrition que vous avez mis existe ou pas. Et si elle n'existe pas, ça ne créera pas la recette. 
 
 ### Run the prisma migration
 #### User-api
@@ -47,45 +41,24 @@ HEALTH_PORT=3002
 npx prisma migrate dev
 ```
 
-## SSL
+#### Nutrition-api
 
-### Install mkcert 
-
-https://github.com/FiloSottile/mkcert
-
-### Certificates and rootCA
-
+Set the .env :
 ```bash
-mkcert user-api localhost
-mkcert auth-api localhost
-mkcert task-api localhost
-mkcert front localhost
-cp $(mkcert -CAROOT)/rootCA.pem .
+MYSQL_URL="mysql://root:passwd@localhost:3306/nutrition"
 ```
 
-Remove the +1 part of the name of the certificates 
-
-## Front
-
-### example .env
-
 ```bash
-ROOT_CA=../local/certs/rootCA.pem
-FRONT_KEY=../local/certs/front-key.pem
-FRONT_CERT=../local/certs/front.pem
-secure=false
-TASK_API_URL=localhost:4001
-AUTH_API_URL=localhost:4002
-USER_API_URL=localhost:4000
+npx prisma migrate dev
 ```
 
-## Start the servers
+#### Recette-api
 
+Set the .env :
 ```bash
-docker compose up -d
+MYSQL_URL="mysql://root:passwd@localhost:3306/recette"
 ```
 
-| **Name**         | **Url**                |
-|------------------|------------------------|
-| project          | http://localhost:4000  |
-| observability ui | http://localhost:16686 |
+```bash
+npx prisma migrate dev
+```
