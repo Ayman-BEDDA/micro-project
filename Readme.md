@@ -15,6 +15,13 @@ A la racine du projet :
 npm i
 ```
 
+#### Run docker
+
+A la racine du projet :
+```bash
+docker compose up -d
+```
+
 ### Run the prisma migration
 #### User-api
 
