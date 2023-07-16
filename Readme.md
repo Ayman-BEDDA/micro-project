@@ -15,6 +15,16 @@ A la racine du projet :
 npm i
 ```
 
+Dans le dossier "recette-api" :
+```bash
+npm i
+```
+
+Dans le dossier "nutrition-api" :
+```bash
+npm i
+```
+
 #### Run docker
 
 A la racine du projet :
@@ -76,3 +86,14 @@ MYSQL_URL="mysql://root:passwd@localhost:3306/recette"
 ```bash
 npx prisma migrate dev
 ```
+
+#### Run api
+
+```bash
+npm start
+```
+
+| **API**         | **Url**                 |
+|------------------|------------------------|
+| nutrition        | localhost:8000         |
+| recette          | localhost:7000         |
