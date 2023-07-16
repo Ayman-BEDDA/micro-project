@@ -15,6 +15,16 @@ A la racine du projet :
 npm i
 ```
 
+Dans le dossier "recette-api" :
+```bash
+npm i
+```
+
+Dans le dossier "nutrition-api" :
+```bash
+npm i
+```
+
 #### Run docker
 
 A la racine du projet :
