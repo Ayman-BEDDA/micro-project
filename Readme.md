@@ -76,3 +76,9 @@ MYSQL_URL="mysql://root:passwd@localhost:3306/recette"
 ```bash
 npx prisma migrate dev
 ```
+
+#### Run api
+
+```bash
+npm start
+```
