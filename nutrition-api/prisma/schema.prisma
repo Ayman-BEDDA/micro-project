@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["tracing"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("MYSQL_URL")
+}
+
+model Nutrition {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  calories  Int
+  proteines Int
+  lipides   Int
+  glucides  Int
+  fibres    Int
+  vitamines String
+  mineraux  String
+  allergenes String
+}

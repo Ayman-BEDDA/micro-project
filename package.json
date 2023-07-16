@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "@grpc/grpc-js": "^1.8.14"
+    "@bufbuild/buf": "^1.23.1",
+    "@grpc/grpc-js": "^1.8.14",
+    "@nestjs/config": "^3.0.0",
+    "@prisma/client": "^5.0.0",
+    "nestjs-grpc-exceptions": "^0.2.0"
   }
 }
