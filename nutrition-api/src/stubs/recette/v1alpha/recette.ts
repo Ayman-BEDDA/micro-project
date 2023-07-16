@@ -6,50 +6,54 @@ import { Observable } from "rxjs";
 export const protobufPackage = "recette.v1alpha";
 
 export interface Recette {
-  id?: number;
-  name?: string;
-  description?: string;
-  note?: string;
+  id?: number | undefined;
+  name?: string | undefined;
+  description?: string | undefined;
+  note?: string | undefined;
+  nutritionId?: number | undefined;
 }
 
 export interface GetRequest {
-  id?: number;
-  name?: string;
-  description?: string;
-  note?: string;
+  id?: number | undefined;
+  name?: string | undefined;
+  description?: string | undefined;
+  note?: string | undefined;
+  nutritionId?: number | undefined;
 }
 
 export interface GetResponse {
-  recettes?: Recette[];
+  recettes?: Recette[] | undefined;
 }
 
 export interface AddRequest {
-  name?: string;
-  description?: string;
-  note?: string;
+  name?: string | undefined;
+  description?: string | undefined;
+  note?: string | undefined;
+  nutritionId?: number | undefined;
 }
 
 export interface AddResponse {
-  recette?: Recette;
+  recette?: Recette | undefined;
 }
 
 export interface UpdateRequest {
-  id?: number;
-  name?: string;
-  description?: string;
-  note?: string;
+  id?: number | undefined;
+  name?: string | undefined;
+  description?: string | undefined;
+  note?: string | undefined;
+  nutritionId?: number | undefined;
 }
 
 export interface UpdateResponse {
-  recette?: Recette;
+  recette?: Recette | undefined;
 }
 
 export interface DeleteRequest {
-  id?: number;
+  id?: number | undefined;
 }
 
 export interface DeleteResponse {
-  recette?: Recette;
+  recette?: Recette | undefined;
 }
 
 export const RECETTE_V1ALPHA_PACKAGE_NAME = "recette.v1alpha";

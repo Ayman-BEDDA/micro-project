@@ -13,4 +13,5 @@ model Recette {
   name          String   @unique
   description   String
   note          String
+  nutritionId   Int
 }

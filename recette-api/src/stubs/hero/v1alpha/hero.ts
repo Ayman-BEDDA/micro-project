@@ -6,48 +6,48 @@ import { Observable } from "rxjs";
 export const protobufPackage = "task.v1alpha";
 
 export interface Hero {
-  name?: string;
-  id?: number;
-  power?: number;
-  hp?: number;
+  name?: string | undefined;
+  id?: number | undefined;
+  power?: number | undefined;
+  hp?: number | undefined;
 }
 
 export interface GetRequest {
-  name?: string;
-  id?: number;
+  name?: string | undefined;
+  id?: number | undefined;
 }
 
 export interface GetResponse {
-  heroes?: Hero[];
+  heroes?: Hero[] | undefined;
 }
 
 export interface AddRequest {
-  name?: string;
-  power?: number;
+  name?: string | undefined;
+  power?: number | undefined;
 }
 
 export interface AddResponse {
-  hero?: Hero;
+  hero?: Hero | undefined;
 }
 
 export interface UpdateRequest {
-  name?: string;
-  id?: number;
-  power?: number;
-  hp?: number;
+  name?: string | undefined;
+  id?: number | undefined;
+  power?: number | undefined;
+  hp?: number | undefined;
 }
 
 export interface UpdateResponse {
-  hero?: Hero;
+  hero?: Hero | undefined;
 }
 
 export interface DeleteRequest {
-  name?: string;
-  id?: number;
+  name?: string | undefined;
+  id?: number | undefined;
 }
 
 export interface DeleteResponse {
-  hero?: Hero;
+  hero?: Hero | undefined;
 }
 
 export const TASK_V1ALPHA_PACKAGE_NAME = "task.v1alpha";

@@ -16,10 +16,14 @@ import {
 } from './stubs/nutrition/v1alpha/nutrition';
 import { GrpcMethod } from '@nestjs/microservices';
 import { Metadata } from '@grpc/grpc-js';
+import {Prisma} from '@prisma/client';
+
 @Controller()
 @NutritionCRUDServiceControllerMethods()
 export class AppController implements NutritionCRUDServiceController {
   constructor(private readonly appService: AppService) {}
+  
+  @GrpcMethod(NUTRITION_CR_UD_SERVICE_NAME)
   async get(request: GetRequest, metadata?: Metadata): Promise<GetResponse> {
     let nutrition: Nutrition;
     let nutritions: Nutrition[] = [];
@@ -61,8 +65,9 @@ export class AppController implements NutritionCRUDServiceController {
     return { nutrition };
   }
 
-  async add(request: AddRequest): Promise<AddResponse> {
-    const createdNutrition = await this.appService.create({
+  @GrpcMethod(NUTRITION_CR_UD_SERVICE_NAME)
+	async add(request: AddRequest): Promise<AddResponse> {
+	  const createdNutrition = await this.appService.create({
       name: request.name,
       calories: request.calories,
       proteines: request.proteines,
@@ -74,5 +79,5 @@ export class AppController implements NutritionCRUDServiceController {
       allergenes: request.allergenes,
     });
     return { nutrition: createdNutrition };
-  }
+	}
 }

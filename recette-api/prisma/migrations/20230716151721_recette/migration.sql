@@ -4,6 +4,7 @@ CREATE TABLE `Recette` (
     `name` VARCHAR(191) NOT NULL,
     `description` VARCHAR(191) NOT NULL,
     `note` VARCHAR(191) NOT NULL,
+    `nutritionId` INTEGER NOT NULL,
 
     UNIQUE INDEX `Recette_name_key`(`name`),
     PRIMARY KEY (`id`)

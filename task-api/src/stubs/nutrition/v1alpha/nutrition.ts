@@ -6,66 +6,66 @@ import { Observable } from "rxjs";
 export const protobufPackage = "nutrition.v1alpha";
 
 export interface Nutrition {
-  id?: number;
-  name?: string;
-  calories?: number;
-  proteines?: number;
-  lipides?: number;
-  glucides?: number;
-  fibres?: number;
-  vitamines?: string;
-  mineraux?: string;
-  allergenes?: string;
+  id?: number | undefined;
+  name?: string | undefined;
+  calories?: number | undefined;
+  proteines?: number | undefined;
+  lipides?: number | undefined;
+  glucides?: number | undefined;
+  fibres?: number | undefined;
+  vitamines?: string | undefined;
+  mineraux?: string | undefined;
+  allergenes?: string | undefined;
 }
 
 export interface GetRequest {
-  id?: number;
-  name?: string;
+  id?: number | undefined;
+  name?: string | undefined;
 }
 
 export interface GetResponse {
-  nutritions?: Nutrition[];
+  nutritions?: Nutrition[] | undefined;
 }
 
 export interface AddRequest {
-  name?: string;
-  calories?: number;
-  proteines?: number;
-  lipides?: number;
-  glucides?: number;
-  fibres?: number;
-  vitamines?: string;
-  mineraux?: string;
-  allergenes?: string;
+  name?: string | undefined;
+  calories?: number | undefined;
+  proteines?: number | undefined;
+  lipides?: number | undefined;
+  glucides?: number | undefined;
+  fibres?: number | undefined;
+  vitamines?: string | undefined;
+  mineraux?: string | undefined;
+  allergenes?: string | undefined;
 }
 
 export interface AddResponse {
-  nutrition?: Nutrition;
+  nutrition?: Nutrition | undefined;
 }
 
 export interface UpdateRequest {
-  id?: number;
-  name?: string;
-  calories?: number;
-  proteines?: number;
-  lipides?: number;
-  glucides?: number;
-  fibres?: number;
-  vitamines?: string;
-  mineraux?: string;
-  allergenes?: string;
+  id?: number | undefined;
+  name?: string | undefined;
+  calories?: number | undefined;
+  proteines?: number | undefined;
+  lipides?: number | undefined;
+  glucides?: number | undefined;
+  fibres?: number | undefined;
+  vitamines?: string | undefined;
+  mineraux?: string | undefined;
+  allergenes?: string | undefined;
 }
 
 export interface UpdateResponse {
-  nutrition?: Nutrition;
+  nutrition?: Nutrition | undefined;
 }
 
 export interface DeleteRequest {
-  id?: number;
+  id?: number | undefined;
 }
 
 export interface DeleteResponse {
-  nutrition?: Nutrition;
+  nutrition?: Nutrition | undefined;
 }
 
 export const NUTRITION_V1ALPHA_PACKAGE_NAME = "nutrition.v1alpha";

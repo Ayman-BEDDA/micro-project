@@ -7,6 +7,7 @@ message Recette {
   string name = 2;
   string description = 3;
   string note = 4;
+  int32 nutritionId = 5;
 }
 
 service RecetteCRUDService {
@@ -21,6 +22,7 @@ message GetRequest {
   string name = 2;
   string description = 3;
   string note = 4;
+  int32 nutritionId = 5;
 }
 
 message GetResponse {
@@ -31,6 +33,7 @@ message AddRequest {
   string name = 1;
   string description = 2;
   string note = 3;
+  int32 nutritionId = 4;
 }
 
 message AddResponse {
@@ -42,6 +45,7 @@ message UpdateRequest {
     string name = 2;
     string description = 3;
     string note = 4;
+    int32 nutritionId = 5;
   }
   
   message UpdateResponse {

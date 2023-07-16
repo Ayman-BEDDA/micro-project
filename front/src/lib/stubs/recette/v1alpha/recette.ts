@@ -32,6 +32,10 @@ export interface Recette {
      * @generated from protobuf field: string note = 4;
      */
     note: string;
+    /**
+     * @generated from protobuf field: int32 nutritionId = 5;
+     */
+    nutritionId: number;
 }
 /**
  * @generated from protobuf message recette.v1alpha.GetRequest
@@ -53,6 +57,10 @@ export interface GetRequest {
      * @generated from protobuf field: string note = 4;
      */
     note: string;
+    /**
+     * @generated from protobuf field: int32 nutritionId = 5;
+     */
+    nutritionId: number;
 }
 /**
  * @generated from protobuf message recette.v1alpha.GetResponse
@@ -79,6 +87,10 @@ export interface AddRequest {
      * @generated from protobuf field: string note = 3;
      */
     note: string;
+    /**
+     * @generated from protobuf field: int32 nutritionId = 4;
+     */
+    nutritionId: number;
 }
 /**
  * @generated from protobuf message recette.v1alpha.AddResponse
@@ -109,6 +121,10 @@ export interface UpdateRequest {
      * @generated from protobuf field: string note = 4;
      */
     note: string;
+    /**
+     * @generated from protobuf field: int32 nutritionId = 5;
+     */
+    nutritionId: number;
 }
 /**
  * @generated from protobuf message recette.v1alpha.UpdateResponse
@@ -144,11 +160,12 @@ class Recette$Type extends MessageType<Recette> {
             { no: 1, name: "id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 2, name: "name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "description", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "note", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 4, name: "note", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "nutritionId", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<Recette>): Recette {
-        const message = { id: 0, name: "", description: "", note: "" };
+        const message = { id: 0, name: "", description: "", note: "", nutritionId: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<Recette>(this, message, value);
@@ -170,6 +187,9 @@ class Recette$Type extends MessageType<Recette> {
                     break;
                 case /* string note */ 4:
                     message.note = reader.string();
+                    break;
+                case /* int32 nutritionId */ 5:
+                    message.nutritionId = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -195,6 +215,9 @@ class Recette$Type extends MessageType<Recette> {
         /* string note = 4; */
         if (message.note !== "")
             writer.tag(4, WireType.LengthDelimited).string(message.note);
+        /* int32 nutritionId = 5; */
+        if (message.nutritionId !== 0)
+            writer.tag(5, WireType.Varint).int32(message.nutritionId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -212,11 +235,12 @@ class GetRequest$Type extends MessageType<GetRequest> {
             { no: 1, name: "id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 2, name: "name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "description", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "note", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 4, name: "note", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "nutritionId", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<GetRequest>): GetRequest {
-        const message = { id: 0, name: "", description: "", note: "" };
+        const message = { id: 0, name: "", description: "", note: "", nutritionId: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<GetRequest>(this, message, value);
@@ -238,6 +262,9 @@ class GetRequest$Type extends MessageType<GetRequest> {
                     break;
                 case /* string note */ 4:
                     message.note = reader.string();
+                    break;
+                case /* int32 nutritionId */ 5:
+                    message.nutritionId = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -263,6 +290,9 @@ class GetRequest$Type extends MessageType<GetRequest> {
         /* string note = 4; */
         if (message.note !== "")
             writer.tag(4, WireType.LengthDelimited).string(message.note);
+        /* int32 nutritionId = 5; */
+        if (message.nutritionId !== 0)
+            writer.tag(5, WireType.Varint).int32(message.nutritionId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -326,11 +356,12 @@ class AddRequest$Type extends MessageType<AddRequest> {
         super("recette.v1alpha.AddRequest", [
             { no: 1, name: "name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 2, name: "description", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "note", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 3, name: "note", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "nutritionId", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<AddRequest>): AddRequest {
-        const message = { name: "", description: "", note: "" };
+        const message = { name: "", description: "", note: "", nutritionId: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<AddRequest>(this, message, value);
@@ -349,6 +380,9 @@ class AddRequest$Type extends MessageType<AddRequest> {
                     break;
                 case /* string note */ 3:
                     message.note = reader.string();
+                    break;
+                case /* int32 nutritionId */ 4:
+                    message.nutritionId = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -371,6 +405,9 @@ class AddRequest$Type extends MessageType<AddRequest> {
         /* string note = 3; */
         if (message.note !== "")
             writer.tag(3, WireType.LengthDelimited).string(message.note);
+        /* int32 nutritionId = 4; */
+        if (message.nutritionId !== 0)
+            writer.tag(4, WireType.Varint).int32(message.nutritionId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -435,11 +472,12 @@ class UpdateRequest$Type extends MessageType<UpdateRequest> {
             { no: 1, name: "id", kind: "scalar", T: 5 /*ScalarType.INT32*/ },
             { no: 2, name: "name", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
             { no: 3, name: "description", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 4, name: "note", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 4, name: "note", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: "nutritionId", kind: "scalar", T: 5 /*ScalarType.INT32*/ }
         ]);
     }
     create(value?: PartialMessage<UpdateRequest>): UpdateRequest {
-        const message = { id: 0, name: "", description: "", note: "" };
+        const message = { id: 0, name: "", description: "", note: "", nutritionId: 0 };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<UpdateRequest>(this, message, value);
@@ -461,6 +499,9 @@ class UpdateRequest$Type extends MessageType<UpdateRequest> {
                     break;
                 case /* string note */ 4:
                     message.note = reader.string();
+                    break;
+                case /* int32 nutritionId */ 5:
+                    message.nutritionId = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -486,6 +527,9 @@ class UpdateRequest$Type extends MessageType<UpdateRequest> {
         /* string note = 4; */
         if (message.note !== "")
             writer.tag(4, WireType.LengthDelimited).string(message.note);
+        /* int32 nutritionId = 5; */
+        if (message.nutritionId !== 0)
+            writer.tag(5, WireType.Varint).int32(message.nutritionId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
